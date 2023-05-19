@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  <h1>Home page</h1>
+  <div style="grid-template-columns: 1fr 1fr 1fr; column-gap: 16px;">
+    {% for post in posts %}
+    <div style="border: 1px solid black; margin: 15px; width: 300px;">
+      <h3>{{post.title}}</h3>
+      <p>{{post.content}}</p>
+      <div style="display: flex; margin-top: 50px;">
+        <p style="margin-right: 30px;">{{post.author}}</p>
+        <p>{{post.date_posted}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock content%}
